@@ -23,7 +23,7 @@ const Navbar = () => {
                     </div>
                     <Link className="btn btn-ghost normal-case text-xl">
                         <img className='rounded-lg mr-2' style={{ width: '50px' }} src={logo} alt="" />
-                        <Link style={{ textDecoration: 'none', color: 'black' }} className='font-bold text-2xl' to="/">Prims Motos</Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} className='font-bold text-2xl' to="/">Prime Motors</Link>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
