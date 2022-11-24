@@ -8,8 +8,8 @@ Here You can see the live website [Click here]()
 
 ### Project's Description
 
-* Best motos reseling services.
-* You can see all services on service section.
+* Best motor bike reseling services.
+* Every procuct have a category.
 * You can see info on blogs section.
 * Single page application (SPA).
 * Responsive UI.
