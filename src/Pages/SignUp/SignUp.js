@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, formState: { errors }, reset } = useForm()
     const { createUser } = useContext(AuthContext)
     const [signError, setSignUpError] = useState('')
 
@@ -16,6 +16,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                reset()
                 toast.success('User created successfully')
             })
             .catch(error => {
@@ -63,8 +64,6 @@ const SignUp = () => {
                     {signError && <p className='text-red-600'>{signError}</p>}
                 </form>
                 <p className='mt-3'>Already Have an account? <Link className='text-accent' to='/login'>Please login</Link> </p>
-                <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
