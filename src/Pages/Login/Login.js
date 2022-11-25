@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm('')
+    const { LogIn } = useContext(AuthContext)
+    const [loginError, setLoginError] = useState('')
 
     const handleLogin = data => {
         console.log(data);
+        setLoginError('')
+        LogIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('successfully Login')
+            })
+            .catch(error => {
+                console.log(error.message)
+                setLoginError(error.message)
+
+            });
     }
 
     return (
@@ -32,12 +48,11 @@ const Login = () => {
                                 minLength: { value: 6, message: 'Password must be 6 characters.' }
                             })} />
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
-                        <label className="label"> <span className="label-text">Forgot Password?</span></label>
                     </div>
-                    <input className='btn btn-accent mt-4 w-full max-w-xs' value='Login' type="submit" />
-                    {/* {loginError && <p>{loginError}</p>} */}
+                    <input className='btn btn-accent my-4 w-full max-w-xs' value='Login' type="submit" />
+                    {loginError && <p className='text-red-600'>{loginError}</p>}
                 </form>
-                <p className='mt-3'>New to Prime Motors? <Link className='text-secondary' to='/signup'>Create new account</Link> </p>
+                <p className='mt-3'>New to Prime Motors? <Link className='text-accent' to='/signup'>Create new account</Link> </p>
                 <div className="divider">OR</div>
                 <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </div>
