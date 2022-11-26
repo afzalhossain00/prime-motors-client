@@ -1,23 +1,23 @@
 [
     {
-        "id": 1,
+        "categoryId": 1,
         "name": "Sports Bike",
-        "description": "Find the best deals second hand Sports Bike. Get amount of 200+ bikes",
-        "quantity": 80,
+        "description": "Find the best deals second hand Sports Bike. Get amount of 80+ sports bikes",
+        "quantity": 20,
         "url": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
     },
     {
-        "id": 1,
+        "categoryId": 2,
         "name": "Luxury bike",
-        "description": "Find the best deals second hand Electric car. Get amount of 100+ bikes",
+        "description": "Find the best deals second hand Electric car. Get amount of 30+ luxury bikes",
         "quantity": 15,
         "url": "https://images.pexels.com/photos/4616619/pexels-photo-4616619.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-        "id": 1,
+        "categoryId": 3,
         "name": "Scooter bike",
-        "description": "Find the best deals second hand Sports Bike. Get amount of 140+ bikes",
-        "quantity": 50,
+        "description": "Find the best deals second hand Sports Bike. Get amount of 40+ scooter bikes",
+        "quantity": 25,
         "url": "https://images.pexels.com/photos/159192/vespa-roller-motor-scooter-cult-159192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
 ]

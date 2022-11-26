@@ -4,8 +4,10 @@ import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
+import Product from "../../Pages/Home/Product/Product";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -21,8 +23,13 @@ export const router = createBrowserRouter([
                 element: <Blogs></Blogs>
             },
             {
+                path: '/category/:categoryId',
+                element: <Product></Product>,
+                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.categoryId}`)
+            },
+            {
                 path: '/dashboard',
-                element: <Dashboard></Dashboard>
+                element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
             },
             {
                 path: '/login',
