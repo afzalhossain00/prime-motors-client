@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = ({ product, setBookItem }) => {
     const { image, title, location, resalePrice, originalPrice, YearsOfUse, postedTime, sellersName } = product;
 
     return (
@@ -15,13 +15,13 @@ const ProductDetails = ({ product }) => {
                     <p><span className='font-semibold'>Years of use: </span>{YearsOfUse}</p>
                     <p><span className='font-semibold'>Posted Time: </span>{postedTime}</p>
                     <p><span className='font-semibold'>Seller Name: </span>{sellersName}</p>
-                    {/* <p>Resale Price: {resalePrice}</p>
-                    <p>Years of use: {YearsOfUse}</p>
-                    <p>Posted Time: {postedTime}</p>
-                    <p>Seller Name: {sellersName}</p> */}
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Book Now</button>
+                    <label
+                        htmlFor="booking-modal"
+                        className="btn btn-accent"
+                        onClick={() => setBookItem(product)}
+                    >Book Now</label>
                 </div>
             </div>
         </div>

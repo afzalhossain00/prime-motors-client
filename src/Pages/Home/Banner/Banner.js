@@ -8,7 +8,7 @@ const Banner = () => {
                 <div className="max-w-md text-white">
                     <h1 className="mb-5 text-5xl font-bold">Prime Motors</h1>
                     <p className="mb-5 text-lg">Looking to buy or sell a motorbike or scooter? Find best deals on used motorbikes and scooters only on Prime motors.</p>
-                    <button className="btn btn-primary btn-sm">Get Started</button>
+                    <button className="btn btn-accent btn-sm">Get Started</button>
                 </div>
             </div>
         </div>
