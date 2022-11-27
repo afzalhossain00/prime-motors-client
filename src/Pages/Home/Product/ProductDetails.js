@@ -13,7 +13,7 @@ const ProductDetails = ({ product, setBookItem }) => {
                     <p><span className='font-semibold'>Orginal Price: </span>${originalPrice}</p>
                     <p><span className='font-semibold'>Resale Price: </span>${resalePrice}</p>
                     <p><span className='font-semibold'>Years of use: </span>{YearsOfUse}</p>
-                    <p><span className='font-semibold'>Posted Time: </span>{postDate}</p>
+                    <p><span className='font-semibold'>Posted Time: </span>{postDate.slice(0, 10)}</p>
                     <p><span className='font-semibold'>Seller Name: </span>{sellersName}</p>
                 </div>
                 <div className="card-actions justify-end">

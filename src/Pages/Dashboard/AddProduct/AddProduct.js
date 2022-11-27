@@ -32,11 +32,12 @@ const AddProduct = () => {
                         sellersName: user?.displayName,
                         categoryId: data.categoryId,
                         image: imgData.data.url,
+                        originalPrice: data.originalPrice,
                         resalePrice: data.resalePrice,
                         condition: data.condition,
                         location: data.location,
                         categoryName: data.categoryName,
-                        postedTime: data.postedTime,
+                        YearsOfUse: data.YearsOfUse,
                         description: data.description,
                         postDate
                     }
@@ -56,7 +57,7 @@ const AddProduct = () => {
                         .then(result => {
                             console.log(result)
                             toast.success('Posted Successfully')
-                            // navigate('/dashboard/mycars')
+                            navigate('/dashboard/myproducts')
                         })
 
                     //Selers product
@@ -71,15 +72,15 @@ const AddProduct = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log(result)
-                            // navigate('/dashboard/mycars')
+                            navigate('/dashboard/myproducts')
                         })
                 }
             })
     }
 
     return (
-        <div className='w-9/12 mx-auto'>
-            <h2 className='text-4xl mb-5'>Post Your Product for Selling</h2>
+        <div className='w-9/12 mx-auto mt-10'>
+            <h2 className='text-3xl font-semibold mb-5'>Post Your Product for Selling</h2>
             <form onSubmit={handleSubmit(handleAddProduct)}>
                 <div className="form-control w-full">
                     <label className="label"><span className="label-text">Email</span></label>
@@ -105,6 +106,14 @@ const AddProduct = () => {
                         {...register("title", { required: "Name is required" })}
                         className="input input-bordered w-full" />
                     {errors.title && <p className='text-red-600'>{errors.title?.message}</p>}
+                </div>
+
+                <div className="form-control w-full">
+                    <label className="label"><span className="label-text">Price: In Dollar</span></label>
+                    <input type="number"
+                        {...register("resalePrice", { required: "Price is required" })}
+                        className="input input-bordered w-full" />
+                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
@@ -145,7 +154,7 @@ const AddProduct = () => {
                 <div className="form-control w-full">
                     <label className="label"><span className="label-text">Years Of Purchase</span></label>
                     <input type="text"
-                        {...register("onDate", { required: "Name is required" })}
+                        {...register("YearsOfUse", { required: "Name is required" })}
                         className="input input-bordered w-full" />
                     {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
                 </div>
