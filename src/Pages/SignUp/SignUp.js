@@ -3,12 +3,20 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useToken from '../../hooks/UseToken';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
     const { createUser, updateUser } = useContext(AuthContext)
     const [signError, setSignUpError] = useState('')
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+
+    const [token] = useToken(createdUserEmail)
     const navigate = useNavigate();
+
+    if (token) {
+        navigate('/')
+    }
 
     const handleSignUp = data => {
         setSignUpError('')
@@ -25,8 +33,7 @@ const SignUp = () => {
                 updateUser(userInfo)
                     .then(() => {
                         console.log('user updated');
-                        // toast.success('Profile Update successfully')
-                        saveUser(data.name, data.email)
+                        saveUser(data.name, data.email, data.role)
                     })
                     .catch(err => console.error('While updating user', err));
             })
@@ -35,8 +42,8 @@ const SignUp = () => {
                 setSignUpError(error.message)
             });
 
-        const saveUser = (name, email) => {
-            const user = { name, email };
+        const saveUser = (name, email, role) => {
+            const user = { name, email, role };
             fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
@@ -47,10 +54,9 @@ const SignUp = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    navigate('/');
+                    setCreatedUserEmail(email)
                 })
         }
-
     }
 
     return (
@@ -75,6 +81,15 @@ const SignUp = () => {
                             })}
                         />
                         {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
+
+                        <label className="label"> <span className="label-text">Choose User</span> </label>
+                        <select
+                            {...register("role")}
+                            className="select select-bordered w-full max-w-xs">
+                            <option value='seller'>Seller</option>
+                            <option value='buyer'>Buyer</option>
+                        </select>
+
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>
