@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             {
                 path: '/category/:categoryId',
                 element: <PrivateRoutes><Product></Product></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.categoryId}`)
+                loader: ({ params }) => fetch(`https://prime-motors-server.vercel.app/category/${params.categoryId}`)
             },
             {
                 path: '/login',

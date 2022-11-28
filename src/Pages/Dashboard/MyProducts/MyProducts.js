@@ -14,7 +14,7 @@ const MyProducts = () => {
         setDeleteBike(null);
     }
 
-    const url = (`http://localhost:5000/sellerProduct?email=${user?.email}`);
+    const url = (`https://prime-motors-server.vercel.app/sellerProduct?email=${user?.email}`);
 
     const { data: bikes = [], isLoading, refetch } = useQuery({
         queryKey: ['bikes', user?.email],
@@ -31,7 +31,7 @@ const MyProducts = () => {
     })
 
     const handleDeleteProduct = bike => {
-        fetch(`http://localhost:5000/sellerProduct/${bike._id}`, {
+        fetch(`https://prime-motors-server.vercel.app/sellerProduct/${bike._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: ` bearer ${localStorage.getItem('accessToken')}`

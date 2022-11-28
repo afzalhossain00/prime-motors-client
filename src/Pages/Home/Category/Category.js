@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import axios from 'axios';
 import Loading from '../../Shared/Loading/Loading';
 import CategoryDetails from './CategoryDetails';
 
@@ -6,9 +7,8 @@ const Category = () => {
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/category')
-            const data = await res.json()
-            return data;
+            const res = await axios.get('https://prime-motors-server.vercel.app/category')
+            return res.data;
         }
     });
 

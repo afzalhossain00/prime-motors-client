@@ -6,6 +6,10 @@ The Project name is **Prime Motors**
 
 Here You can see the live website [Click here](https://prime-motors-ad8ec.web.app)
 
+## **Important** Admin role Email and Password
+adminEmail: <afzalhossen00@gmail.com>
+adminPassword: <1234aA@>
+
 ### Project's Description
 
 * Best motor bike reseling services.
