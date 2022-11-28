@@ -103,25 +103,25 @@ const AddProduct = () => {
                 <div className="form-control w-full">
                     <label className="label"><span className="label-text">Product Name</span></label>
                     <input type="text"
-                        {...register("title", { required: "Name is required" })}
+                        {...register("title", { required: "Product name is required" })}
                         className="input input-bordered w-full" />
                     {errors.title && <p className='text-red-600'>{errors.title?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
-                    <label className="label"><span className="label-text">Price: In Dollar</span></label>
+                    <label className="label"><span className="label-text">Orginal Price</span></label>
                     <input type="number"
-                        {...register("resalePrice", { required: "Price is required" })}
+                        {...register("originalPrice", { required: "Orginal price is required" })}
                         className="input input-bordered w-full" />
-                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    {errors.originalPrice && <p className='text-red-600'>{errors.originalPrice?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
-                    <label className="label"><span className="label-text">Price: In Dollar</span></label>
+                    <label className="label"><span className="label-text">Resale Price</span></label>
                     <input type="number"
-                        {...register("resalePrice", { required: "Price is required" })}
+                        {...register("resalePrice", { required: "Resale price is required" })}
                         className="input input-bordered w-full" />
-                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    {errors.resalePrice && <p className='text-red-600'>{errors.resalePrice?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
@@ -140,7 +140,7 @@ const AddProduct = () => {
                     <input type="tel"
                         {...register("phone", { required: "Phone number is required" })}
                         className="input input-bordered w-full" />
-                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
@@ -148,18 +148,18 @@ const AddProduct = () => {
                     <input type="text"
                         {...register("location", { required: "Location is required" })}
                         className="input input-bordered w-full" />
-                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    {errors.location && <p className='text-red-600'>{errors.location?.message}</p>}
                 </div>
 
                 <div className="form-control w-full">
                     <label className="label"><span className="label-text">Years Of Purchase</span></label>
                     <input type="text"
-                        {...register("YearsOfUse", { required: "Name is required" })}
+                        {...register("YearsOfUse", { required: "Years of use is required" })}
                         className="input input-bordered w-full" />
-                    {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                    {errors.YearsOfUse && <p className='text-red-600'>{errors.YearsOfUse?.message}</p>}
                 </div>
 
-                <div className="form-control w-full">
+                {/* <div className="form-control w-full">
                     <label className="label"><span className="label-text">Category Name</span></label>
                     <select
                         {...register('categoryName', { required: "Category Name is required" })}
@@ -168,15 +168,15 @@ const AddProduct = () => {
                         <option value='Luxury bike'>Luxury bike</option>
                         <option value='Scooter bike'>Scooter bike</option>
                     </select>
-                </div>
+                </div> */}
                 <div className="form-control w-full">
-                    <label className="label"><span className="label-text">Category ID</span></label>
+                    <label className="label"><span className="label-text">Category</span></label>
                     <select
                         {...register('categoryId', { required: "Category Id is required" })}
                         className="select input-bordered w-full">
-                        <option value={1}>1</option>
-                        <option value={2}>2</option>
-                        <option value={3}>3</option>
+                        <option value={1}>Sports Bike</option>
+                        <option value={2}>Luxury bike</option>
+                        <option value={3}>Scooter bike</option>
                     </select>
                 </div>
                 <div className="form-control w-full">

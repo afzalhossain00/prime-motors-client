@@ -33,16 +33,18 @@ const MyOrders = () => {
                             <th>Email</th>
                             <th>Item</th>
                             <th>Price</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            bookings?.map((booking, i) => <tr key={booking._id} className='hover'>
+                            bookings.map((booking, i) => <tr key={booking._id} className='hover'>
                                 <th>{i + 1}</th>
                                 <td>{booking.user}</td>
                                 <td>{booking.email}</td>
                                 <td>{booking.itemName}</td>
                                 <td>${booking.price}</td>
+                                <td><button className='btn btn-xs btn-primary'>Pay</button></td>
                             </tr>)
                         }
                     </tbody>

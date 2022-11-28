@@ -55,6 +55,7 @@ const SignUp = () => {
                 .then(data => {
                     console.log(data);
                     setCreatedUserEmail(email)
+                    navigate('/')
                 })
         }
     }
