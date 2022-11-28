@@ -8,7 +8,7 @@ import useToken from '../../hooks/UseToken';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm('')
-    const { LogIn, providerLogin } = useContext(AuthContext)
+    const { LogIn, providerLogin, setUser } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
     const [loginUserEmail, setLoginUserEmail] = useState('')
     const [token] = useToken(loginUserEmail);
@@ -27,6 +27,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setUser(user)
                 toast.success('successfully Login')
                 navigate(from, { replace: true })
             })

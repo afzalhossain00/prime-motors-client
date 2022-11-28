@@ -4,7 +4,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider';
 
 const BookingModal = ({ bookItem, setBookItem }) => {
     const { user } = useContext(AuthContext);
-    const { title, resalePrice } = bookItem
+    const { title, resalePrice, image } = bookItem
 
     const handleBooking = event => {
         event.preventDefault();
@@ -22,10 +22,11 @@ const BookingModal = ({ bookItem, setBookItem }) => {
             itemName: title,
             price,
             phone,
-            location
+            location,
+            image
         }
 
-        fetch('https://prime-motors-server.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

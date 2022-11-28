@@ -9,7 +9,6 @@ const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imageHostKey = process.env.REACT_APP_imgbb_key;
     const { user } = useContext(AuthContext);
-
     const navigate = useNavigate();
     const postDate = new Date();
 
@@ -42,10 +41,8 @@ const AddProduct = () => {
                         postDate
                     }
 
-                    console.log(product);
-
                     // Save sellers product to database
-                    fetch('https://prime-motors-server.vercel.app/bikes', {
+                    fetch('http://localhost:5000/bikes', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -56,12 +53,12 @@ const AddProduct = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log(result)
-                            toast.success('Posted Successfully')
+                            toast.success(`${data.title} Posted Successfully`)
                             navigate('/dashboard/myproducts')
                         })
 
-                    //Selers product
-                    fetch('https://prime-motors-server.vercel.app/sellerProduct', {
+                    //Sellers product
+                    fetch('http://localhost:5000/sellerProduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
