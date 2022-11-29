@@ -3,11 +3,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import productImage from '../../../assets/logo.png';
 import Loading from '../../Shared/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const MyOrders = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://prime-motors-server.vercel.app/bookings?email=${user?.email}`
 
     const { data: bookings = [], isLoading } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -43,7 +44,7 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {bookings &&
                             bookings?.map((booking, i) => <tr key={booking._id} className='hover'>
                                 <th>{i + 1}</th>
                                 <th>
@@ -56,9 +57,22 @@ const MyOrders = () => {
                                 <td>{booking.itemName}</td>
                                 <td>{booking.email}</td>
                                 <td>${booking.price}</td>
-                                <td><button className='btn btn-xs btn-primary'>Pay</button></td>
+                                <td>
+                                    {
+                                        booking.price && !booking.paid && <Link
+                                            to={`/dashboard/payment/${booking._id}`}
+                                        ><button
+                                            className='btn btn-primary btn-sm'
+                                        >Pay</button>
+                                        </Link>
+                                    }
+                                    {
+                                        booking.price && booking.paid && <span className='text-green-600'>Paid</span>
+                                    }
+                                </td>
                             </tr>)
                         }
+
                     </tbody>
                 </table>
             </div>

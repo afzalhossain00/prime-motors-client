@@ -56,7 +56,7 @@ const Login = () => {
     return (
         <div className='h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>Login</h2>
+                <h2 className='text-2xl font-semibold text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span> </label>

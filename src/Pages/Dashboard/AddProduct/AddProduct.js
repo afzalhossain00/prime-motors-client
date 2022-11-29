@@ -42,7 +42,7 @@ const AddProduct = () => {
                     }
 
                     // Save sellers product to database
-                    fetch('http://localhost:5000/bikes', {
+                    fetch('https://prime-motors-server.vercel.app/bikes', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -58,7 +58,7 @@ const AddProduct = () => {
                         })
 
                     //Sellers product
-                    fetch('http://localhost:5000/sellerProduct', {
+                    fetch('https://prime-motors-server.vercel.app/sellerProduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -44,7 +44,7 @@ const SignUp = () => {
 
         const saveUser = (name, email, role) => {
             const user = { name, email, role };
-            fetch('http://localhost:5000/users', {
+            fetch('https://prime-motors-server.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -63,8 +63,16 @@ const SignUp = () => {
     return (
         <div className='h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>Sign Up</h2>
+                <h2 className='text-2xl font-semibold text-center'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleSignUp)}>
+                    <label className="label"> <span className="label-text">Register as</span> </label>
+                    <select
+                        {...register("role")}
+                        className="select select-bordered w-full max-w-xs">
+                        <option value='seller'>Seller</option>
+                        <option value='buyer'>Buyer</option>
+                    </select>
+
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Name</span> </label>
                         <input type='text'
@@ -82,15 +90,6 @@ const SignUp = () => {
                             })}
                         />
                         {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
-
-                        <label className="label"> <span className="label-text">Choose User</span> </label>
-                        <select
-                            {...register("role")}
-                            className="select select-bordered w-full max-w-xs">
-                            <option value='seller'>Seller</option>
-                            <option value='buyer'>Buyer</option>
-                        </select>
-
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>

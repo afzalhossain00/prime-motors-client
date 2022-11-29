@@ -26,7 +26,7 @@ const BookingModal = ({ bookItem, setBookItem }) => {
             image
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://prime-motors-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

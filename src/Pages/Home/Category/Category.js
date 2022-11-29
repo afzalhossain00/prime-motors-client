@@ -7,7 +7,7 @@ const Category = () => {
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/category')
+            const res = await axios.get('https://prime-motors-server.vercel.app/category')
             return res.data;
         }
     });
