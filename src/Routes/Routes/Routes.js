@@ -3,10 +3,14 @@ import DashboardLoayout from "../../Layout/DashboardLoayout";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
+import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import MyBuyers from "../../Pages/Dashboard/MyBuyers/MyBuyers";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
+import ReportItems from "../../Pages/Dashboard/ReportItems/ReportItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Product from "../../Pages/Home/Product/Product";
@@ -15,6 +19,7 @@ import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import SellerRoute from "../SellerRoute/SellerRoute";
 
 export const router = createBrowserRouter([
     {
@@ -52,19 +57,35 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <MyOrders></MyOrders>,
+                element: <PrivateRoutes><MyOrders></MyOrders></PrivateRoutes>,
             },
             {
                 path: '/dashboard/allusers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
             },
             {
+                path: '/dashboard/allSellers',
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>,
+            },
+            {
+                path: '/dashboard/allBuyers',
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>,
+            },
+            {
+                path: '/dashboard/reportedItems',
+                element: <AdminRoute><ReportItems></ReportItems></AdminRoute>,
+            },
+            {
                 path: '/dashboard/addproduct',
-                element: <AdminRoute><AddProduct></AddProduct></AdminRoute>,
+                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>,
             },
             {
                 path: '/dashboard/myproducts',
-                element: <AdminRoute><MyProducts></MyProducts></AdminRoute>,
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>,
+            },
+            {
+                path: '/dashboard/myBuyers',
+                element: <SellerRoute><MyBuyers></MyBuyers></SellerRoute>,
             },
             {
                 path: '/dashboard/payment/:id',
