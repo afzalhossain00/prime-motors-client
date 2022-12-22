@@ -45,11 +45,11 @@ const Login = () => {
                 reset()
                 setLoginUserEmail(data.email)
                 // toast.success('successfully Login')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error.message)
                 setLoginError(error.message)
-
             });
     }
 
