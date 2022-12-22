@@ -7,7 +7,7 @@ The Project name is **Prime Motors**
 Here You can see the live website [Click here](https://prime-motors-ad8ec.web.app)
 
 ## **Important** Admin role Email and Password
-Email: apple@man.com 
+Email: afzalhossen00@gmail.com
 Pass: 1234aA@
 
 ### Project's Description

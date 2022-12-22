@@ -44,8 +44,8 @@ const Login = () => {
                 console.log(user);
                 reset()
                 setLoginUserEmail(data.email)
-                // toast.success('successfully Login')
                 navigate(from, { replace: true })
+                toast.success('successfully Login')
             })
             .catch(error => {
                 console.log(error.message)
