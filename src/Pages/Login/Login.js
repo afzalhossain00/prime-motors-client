@@ -56,6 +56,17 @@ const Login = () => {
     return (
         <div className='h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
+                <h2 className='text-3xl font-semibold text-center mb-4'>Login Credentials</h2>
+                <div className='flex mb-8'>
+                    <div className='mr-2'>
+                        <h3 className='text-center'><span className='font-bold'>Buyer email:</span> buyer@gmail.com</h3>
+                        <h3 className='text-center'><span className='font-bold'>Buyer Pass:</span>@buyer</h3>
+                    </div>
+                    <div>
+                        <h3 className='text-center'><span className='font-bold'>Seller email:</span> seller@gmail.com</h3>
+                        <h3 className='text-center'><span className='font-bold'>Seller Pass:</span> @seller</h3>
+                    </div>
+                </div>
                 <h2 className='text-2xl font-semibold text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control w-full max-w-xs">
