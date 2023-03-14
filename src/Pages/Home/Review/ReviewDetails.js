@@ -7,7 +7,7 @@ const ReviewDetails = ({ slide }) => {
             <div className='flex items-center justify-between mx-auto'>
                 <img src={image} alt='' style={{ width: '100px', height: '100px', borderRadius: '100px' }} className="rounded-xl mr-6" />
                 <div>
-                    <h3 className='text-xl font-bold mb-2'>JOHN DEO</h3>
+                    <h3 className='text-xl font-bold mb-2'>Robert</h3>
                     <p className="mb-5 text-md font-semibold">It is a long established fact that a reader will be <br /> directed by the readable content of a page <br /> when looking at it's layout.</p>
                 </div>
             </div>

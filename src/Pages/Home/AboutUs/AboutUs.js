@@ -9,7 +9,7 @@ const AboutUs = () => {
                 </div>
                 <div className='w-1/2'>
                     <h2 className='text-3xl font-bold mb-6'>ABOUT US</h2>
-                    <p className="mb-5 text-md font-semibold">It is a long established fact that a <br /> reader will be directed by the <br /> readable content of a page when <br /> looking at it's layout.</p>
+                    <p className="mb-5 text-md font-semibold">Prime motors is a old recondition <br /> buying and selling website.</p>
                 </div>
             </div>
         </section>

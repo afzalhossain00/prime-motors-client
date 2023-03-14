@@ -14,6 +14,8 @@ import ReportItems from "../../Pages/Dashboard/ReportItems/ReportItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Product from "../../Pages/Home/Product/Product";
+import Review from "../../Pages/Home/Review/Review";
+import AboutUs from "../../Pages/Home/AboutUs/AboutUs";
 import Login from "../../Pages/Login/Login";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -34,6 +36,14 @@ export const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/userReview',
+                element: <Review></Review>
             },
             {
                 path: '/category/:categoryId',

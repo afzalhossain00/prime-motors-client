@@ -20,6 +20,8 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link className='text-lg font-semibold rounded-lg' to='/'>Home</Link></li>
         <li><Link className='text-lg font-semibold rounded-lg' to='/blogs'>Blogs</Link></li>
+        <li><Link className='text-lg font-semibold rounded-lg' to='/aboutUs'>About Us</Link></li>
+        <li><Link className='text-lg font-semibold rounded-lg' to='/userReview'>User Review</Link></li>
 
         {user?.uid ?
             <>
